@@ -4,13 +4,14 @@ const btnSave = document.getElementById("btnSave")
 btnSave.addEventListener("click", ()=>{
 
     const fieldName = document.getElementById("fieldName")
-    alert(fieldName.value)
+    console.log(fieldName.value)
 
     const fieldEmail = document.getElementById("fieldEmail")
-    alert(fieldEmail.value)
+    console.log(fieldEmail.value)
 
+    
     const fieldAge = document.getElementById("fieldAge")
-    alert (fieldAge)
+    console.log (fieldAge.value)
 
 })
 
