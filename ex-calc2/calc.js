@@ -12,14 +12,14 @@ const result = document.getElementById("result")
 btnSum.addEventListener('click', ()=>{
     let v1 = parseFloat(n1.value);
     let v2 =  parseFloat(n2.value);
-    let sum = v1+v2; //criar e subtituir por uma function fSum 
+    let sum = v1+v2; //criar e substituir por uma function fSum 
     result.innerText = sum 
 })
 
 btnSub.addEventListener('click', ()=>{
     let v1 = parseFloat(n1.value);
     let v2 =  parseFloat(n2.value);
-    let sum = v1 - v2; //criar e subtituir por uma function fSub
+    let sum = v1 - v2; //criar e substituir por uma function fSub
     result.innerText = sum 
 })
 
@@ -33,7 +33,7 @@ btnDiv.addEventListener('click', ()=>{
 btnMul.addEventListener('click', ()=>{
     let v1 = parseFloat(n1.value);
     let v2 =  parseFloat(n2.value);
-    let sum = v1*v2; //criar e subtituir por uma function fMul 
+    let sum = v1*v2; //criar e substituir por uma function fMul 
     result.innerText = sum 
 })
 
