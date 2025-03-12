@@ -11,7 +11,7 @@ Equilatetal = all sides are equals
 
 F2:  Add the triangule rule to know idf the typed sizes can make a triangule
 
-( (a+b) <=c ) && ( (a+c)<=b)  && ( (b+c)<=a) 
+( (a+b) >=c ) && ( (a+c)>=b)  && ( (b+c)>=a) 
 
 
 Sure, here are some examples of data to validate the triangle classification:
@@ -32,7 +32,7 @@ Two sides are equal, so this is an Isosceles triangle.
 
 ### Example 3: Scalene Triangle
 - a = 4
-- b = 5
+- b = 5j
 - c = 6
 
 All sides are different, so this is a Scalene triangle.
