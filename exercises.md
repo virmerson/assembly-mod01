@@ -21,3 +21,16 @@ Implement a web page containing 2 inputs and a button. Program the sum button to
     <p id="result"></p>
 </body>
 </html>
+
+## Exercise 2: Number Analysis
+
+Create an application where the user can input N numbers. The application should then display the average, the largest number, and the smallest number entered.
+
+Example:
+Input: 10, 20, 5, 30, 1
+Average: 13.2
+Largest number: 30
+Smallest number: 1
+
+
+
