@@ -32,5 +32,37 @@ Average: 13.2
 Largest number: 30
 Smallest number: 1
 
+## Exercise 3: 
+
+Algorithm Description
+1. Input Collection
+The algorithm reads the gender ('m' for male, 'f' for female).
+It also reads the age of the person.
+
+2. Classification by Age Group
+If the age is less than 18, the person is classified as a minor.
+If the age is between 18 and 60, the person is classified as an adult.
+If the age is greater than 60, the person is classified as an elder.
+
+3. Counting Individuals in Each Category
+The algorithm maintains separate counters for each age group.
+It also tracks how many males and females belong to each group.
+
+4. Calculating Averages
+The algorithm sums the ages for each category (minors, adults, elders) separately for men and women.
+It then calculates the average age for each group by dividing the total sum by the number of individuals in that group.
+
+Output Results
+The algorithm outputs:
+
+Total number of people in each age group (minors, adults, elders).
+Total count and average age for:
+Female minors
+Male minors
+Female adults
+Male adults
+Female elders
+Male elders
+
 
 
