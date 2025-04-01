@@ -5,6 +5,7 @@ const btnAdd= document.getElementById("btnAdd");
 const btnCancel= document.getElementById("btnCancel");
 const inpDesc = document.getElementById("inpDesc");
 const inpHours = document.getElementById("inpHours");
+const divMessage = document.getElementById("message");
 
 btnCancel.addEventListener ('click', ()=>{
     resetForm()
@@ -22,12 +23,25 @@ btnAdd.addEventListener('click', ()=>{
    
     renderGoalList()
     resetForm()
+    showMessage('Goal saved successfully!')
 })
+
+let messageTimeout;
+const showMessage = (message) => {
+    divMessage.innerHTML = message;
+    if (messageTimeout) {
+        clearTimeout(messageTimeout);
+    }
+
+    messageTimeout = setTimeout(() => {
+        divMessage.innerHTML = "";
+    }, 3000);
+};
 
 const renderGoalList=()=>{
    const arrGoalRendered = arrGoal.map( (goal, index) => 
-            `<div>
-                    <div> ${goal.description} </div>
+            `<div >
+                    <div > ${goal.description} </div>
                     <div> ${goal.hours} </div> 
                     <div> <button onclick='goalDelete(${index})'> Delete </button> </div>
                     <div> <button onclick='goalEdit(${index})'> Edit </button> </div>
@@ -36,8 +50,12 @@ const renderGoalList=()=>{
 }
 
 const goalDelete=(index)=>{
-   arrGoal.splice(index, 1)
-   renderGoalList()
+    if (confirm('Are you sure you want to delete this record?')){
+        arrGoal.splice(index, 1)
+       
+        renderGoalList()
+        showMessage('Goal deleted successfully!')
+    }
 }
 
 const goalEdit=(index)=>{
