@@ -11,19 +11,39 @@ btnCancel.addEventListener ('click', ()=>{
     resetForm()
 })
 
-btnAdd.addEventListener('click', ()=>{
-    const goal = { description:inpDesc.value , hours: inpHours.value} 
-   
-    if (indexEdit==-1){
-        arrGoal.push(goal)
-    }else{
-       arrGoal[indexEdit] =  goal
 
+btnAdd.addEventListener('click', ()=>{
+    let formErrors = []
+
+
+    if( inpDesc.value=="" ){
+        formErrors.push('The field description is required!')
     }
-   
-    renderGoalList()
-    resetForm()
-    showMessage('Goal saved successfully!')
+    if (inpDesc.value.length<3){
+        formErrors.push('The field description needs to have at least 3 characters!')
+    }
+    if (inpHours.value ==""){
+        formErrors.push ('The field hours is required!')
+    }
+
+   if (formErrors.length==0){  
+        const goal = { description:inpDesc.value , hours: inpHours.value} 
+        if (indexEdit==-1){
+            arrGoal.push(goal)
+        }else{
+            arrGoal[indexEdit] =  goal
+        }
+        renderGoalList()
+        resetForm()
+        showMessage('Goal saved successfully!')
+        //add the css success class to the divMessage
+        divMessage.className = 'success'
+    }else {
+        const errorMessage =  formErrors.join("")
+        showMessage( errorMessage   )
+        // add the css error class to the divMessage
+        divMessage.className = 'error'
+    }   
 })
 
 let messageTimeout;
@@ -35,7 +55,8 @@ const showMessage = (message) => {
 
     messageTimeout = setTimeout(() => {
         divMessage.innerHTML = "";
-    }, 3000);
+
+    }, 5000);
 };
 
 const renderGoalList=()=>{

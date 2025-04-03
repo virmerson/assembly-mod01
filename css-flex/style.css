@@ -31,3 +31,14 @@
 #message{
     height: 1em;
 }
+
+/* create an error class  */
+
+.error{
+    color: red;
+}
+
+/* create a success class */
+.success{
+    color: green;
+}
